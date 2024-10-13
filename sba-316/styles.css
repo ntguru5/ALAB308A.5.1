@@ -1,0 +1,21 @@
+.high-priority {
+    color: red;
+    font-weight: bold;
+}
+
+.medium-priority {
+    color: orange;
+    font-weight: bold;
+}
+
+.low-priority {
+    color: green;
+}
+
+.hidden {
+    display: none;
+}
+
+li {
+    padding: 10px;
+}
