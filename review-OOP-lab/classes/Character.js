@@ -1,3 +1,4 @@
+// This is the mainCharacter class
 export default class Character {
     static MAX_HEALTH = 100;
 
@@ -8,7 +9,7 @@ export default class Character {
         this.companion = null;
     }
 
-
+    // These are the methods that will be used by the Character class
     roll (mod = 0) {
         const result = Math.floor(Math.random() * 20) + 1 + mod;
         console.log(`${this.name} rolled a ${result}.`)

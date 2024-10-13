@@ -1,5 +1,5 @@
 import Character from './Character.js'
-
+// We need to import the Character class because it is used in this class
 export default class Adventurer extends Character {
     static ROLES = ['Fighter', 'Healer', 'Wizard']
 
@@ -15,7 +15,7 @@ export default class Adventurer extends Character {
         // Every adventurer starts with a bed and 50 gold coins.
         this.inventory.push('bedroll', '50 gold coins')
     }
-
+    // These are the methods that will be used by the Adventurer class
     scout () {
         console.log(`${this.name} is scouting ahead...`);
         this.roll();
