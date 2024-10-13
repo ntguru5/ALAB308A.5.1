@@ -54,93 +54,93 @@ const buttons = document.querySelectorAll('button');
 // });
 
 // event listeners
-taskForm.addEventListener('submit', handleTaskSubmit);
-clearTaskBtn.addEventListener('click', clearCompletedTasks);
+// taskForm.addEventListener('submit', handleTaskSubmit);
+// clearTaskBtn.addEventListener('click', clearCompletedTasks);
 
 // cache document fragment
-const fragment = document.createDocumentFragment();
+// const fragment = document.createDocumentFragment();
 
-// Task submission handler
-function handleTaskSubmit(event) {
-    event.preventDefault(); // Prevent default form submission
+// // Task submission handler
+// function handleTaskSubmit(event) {
+//     event.preventDefault(); // Prevent default form submission
 
-    const taskText = taskInput.value; // Get task input value
-    const priority = document.getElementById('priority').value; // Get selected priority
+//     const taskText = taskInput.value; // Get task input value
+//     const priority = document.getElementById('priority').value; // Get selected priority
 
-    // Validate input
-    if (taskText.length < 3) {
-        alert('Task name must be at least 3 characters long');
-        return; // Exit if input is invalid
-    }
+//     // Validate input
+//     if (taskText.length < 3) {
+//         alert('Task name must be at least 3 characters long');
+//         return; // Exit if input is invalid
+//     }
 
-  // Create task item using createElement and appendChild
-    const taskItem = document.createElement('li');
-    taskItem.textContent = taskText;
-    taskItem.classList.add(`${priority}-priority`);
+//   // Create task item using createElement and appendChild
+//     const taskItem = document.createElement('li');
+//     taskItem.textContent = taskText;
+//     taskItem.classList.add(`${priority}-priority`);
 
-  // Add checkbox to mark task as complete
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.addEventListener('change', function() {
-    if (checkbox.checked) {
-        markTaskAsCompleted(taskItem);
-    }
-    });
-    taskItem.prepend(checkbox);
+//   // Add checkbox to mark task as complete
+//     const checkbox = document.createElement('input');
+//     checkbox.type = 'checkbox';
+//     checkbox.addEventListener('change', function() {
+//     if (checkbox.checked) {
+//         markTaskAsCompleted(taskItem);
+//     }
+//     });
+//     taskItem.prepend(checkbox);
 
-  // Add delete button
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.addEventListener('click', function() {
-    taskItem.remove();
-    });
-    taskItem.appendChild(deleteButton);
-    deleteButton.style.marginLeft = '5px'; // Add spacing between task text and button
-    deleteButton.style.padding = '5px 10px';
-    deleteButton.style.backgroundColor = 'rgb(250, 100, 100)'; // Red button
-    deleteButton.style.color = 'white';
-    deleteButton.style.border = 'none';
-    deleteButton.style.borderRadius = '7px';
-    deleteButton.style.cursor = 'pointer';
+//   // Add delete button
+//     const deleteButton = document.createElement('button');
+//     deleteButton.textContent = 'Delete';
+//     deleteButton.addEventListener('click', function() {
+//     taskItem.remove();
+//     });
+//     taskItem.appendChild(deleteButton);
+//     deleteButton.style.marginLeft = '5px'; // Add spacing between task text and button
+//     deleteButton.style.padding = '5px 10px';
+//     deleteButton.style.backgroundColor = 'rgb(250, 100, 100)'; // Red button
+//     deleteButton.style.color = 'white';
+//     deleteButton.style.border = 'none';
+//     deleteButton.style.borderRadius = '7px';
+//     deleteButton.style.cursor = 'pointer';
 
-  // Append task item to fragment and then to the task list
-    fragment.appendChild(taskItem);
-    taskList.appendChild(fragment);
+//   // Append task item to fragment and then to the task list
+//     fragment.appendChild(taskItem);
+//     taskList.appendChild(fragment);
 
-  // Clear input field after submission
-    taskInput.value = '';
-}
+//   // Clear input field after submission
+//     taskInput.value = '';
+// }
 
-// Mark task as complete
-function markTaskAsCompleted(taskItem) {
-    taskItem.remove();
-    completedTaskList.appendChild(taskItem);
+// // Mark task as complete
+// function markTaskAsCompleted(taskItem) {
+//     taskItem.remove();
+//     completedTaskList.appendChild(taskItem);
 
-    // add strikethrough styling
-    taskItem.style.textDecoration = 'line-through';
-    taskItem.querySelector('input[type="checkbox"]').remove();
+//     // add strikethrough styling
+//     taskItem.style.textDecoration = 'line-through';
+//     taskItem.querySelector('input[type="checkbox"]').remove();
 
-    // show "Clear Completed Tasks" button
-    clearTaskBtn.classList.remove('hidden');
-}
+//     // show "Clear Completed Tasks" button
+//     clearTaskBtn.classList.remove('hidden');
+// }
 
-// Function to clear completed tasks
-function clearCompletedTasks() {
-    // Iterate over completed tasks and remove them
-    while (completedTaskList.firstChild) {
-    completedTaskList.removeChild(completedTaskList.firstChild);
-    }
+// // Function to clear completed tasks
+// function clearCompletedTasks() {
+//     // Iterate over completed tasks and remove them
+//     while (completedTaskList.firstChild) {
+//     completedTaskList.removeChild(completedTaskList.firstChild);
+//     }
 
-    // Hide the "Clear Completed Tasks" button
-    clearTaskBtn.classList.add('hidden');
-}
+//     // Hide the "Clear Completed Tasks" button
+//     clearTaskBtn.classList.add('hidden');
+// }
 
 // BOM property requirement - show an alert based on window size
-window.addEventListener('resize', function() {
-  if (window.innerWidth < 600) {
-    alert('You are in mobile view');
-  }
-});
+// window.addEventListener('resize', function() {
+//   if (window.innerWidth < 600) {
+//     alert('You are in mobile view');
+//   }
+// });
 
-// BOM property requirement - modify the URL hash
-window.location.hash = '#taskApp';
+// // BOM property requirement - modify the URL hash
+// window.location.hash = '#taskApp';

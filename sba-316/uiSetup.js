@@ -3,15 +3,9 @@
 export function setupBodyStyles() {
     document.body.style.fontFamily = 'Source Code Pro, monospace';
     document.body.style.backgroundColor = 'azure';
-    // Set font for everything else
-    const formElements = document.querySelectorAll('button, input, select');
-    formElements.forEach((element) => {
-    element.style.fontFamily = "'Source Code Pro', 'monospace'";
-});
 }
 
 export function styleButtons(buttons) {
-    const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         // Set base styles
         button.style.padding = '10px 15px';
@@ -35,5 +29,12 @@ export function styleButtons(buttons) {
             button.style.backgroundColor = 'green';
             button.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
         });
+    });
+}
+
+export function styleFormElements() {
+    const formElements = document.querySelectorAll('button, input, select');
+    formElements.forEach((element) => {
+        element.style.fontFamily = "'Source Code Pro', 'monospace'";
     });
 }

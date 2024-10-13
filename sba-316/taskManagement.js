@@ -2,6 +2,14 @@
 
 const fragment = document.createDocumentFragment();
 
+export function setupTaskManager(taskForm, taskInput, taskList, completedTaskList, clearTaskBtn) {
+    // Task submission handler
+    taskForm.addEventListener('submit', (event) => handleTaskSubmit(event, taskInput, taskList));
+
+    // Clear completed tasks listener
+    clearTaskBtn.addEventListener('click', () => clearCompletedTasks(completedTaskList, clearTaskBtn));
+}
+
 // Task submission handler
 export function handleTaskSubmit(event) {
     event.preventDefault(); // Prevent default form submission
